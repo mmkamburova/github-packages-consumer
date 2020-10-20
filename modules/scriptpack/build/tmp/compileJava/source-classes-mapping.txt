@@ -1,0 +1,4 @@
+com/softwareag/scriptpack/ScriptPackGenerator.java
+ com.softwareag.scriptpack.ScriptPackGenerator
+com/softwareag/scriptpack/BufferedReaderSupplier.java
+ com.softwareag.scriptpack.BufferedReaderSupplier

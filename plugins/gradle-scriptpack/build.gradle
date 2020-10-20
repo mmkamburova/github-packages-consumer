@@ -1,0 +1,27 @@
+plugins {
+    id "java-gradle-plugin"
+    id "eclipse"
+    id "com.gradle.plugin-publish" version "0.12.0"
+}
+
+gradlePlugin {
+    plugins {
+        scriptpackPlugin {
+            id = "com.softwareag.scriptpack"
+            displayName = "Software AG Script Pack Plugin for Gradle"
+            implementationClass = "com.softwareag.scriptpack.plugin.ScriptPackPlugin"
+        }
+    }
+}
+
+sourceSets.main.java.srcDirs project(":modules:scriptpack").sourceSets.main.java
+sourceSets.main.resources.srcDirs project(":modules:scriptpack").sourceSets.main.resources
+
+//version = "1.0.0"
+
+pluginBundle {
+    website = "https://github.com/SoftwareAG/scriptpack"
+    vcsUrl = "https://github.com/SoftwareAG/scriptpack.git"
+    tags = ["script", "windows", "posix"]
+    description = "Script Pack creates executable scripts for Windows and POSIX systems that contain arbitrary binary data (payload)."
+}

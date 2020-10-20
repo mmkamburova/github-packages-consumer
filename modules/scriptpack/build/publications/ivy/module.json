@@ -1,0 +1,61 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.softwareag.scriptpack.gradle",
+    "module": "scriptpack",
+    "version": "1.0.8",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "6.6.1",
+      "buildId": "cabtj2wwsjashj53lmvazx3bmy"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "scriptpack-1.0.8.jar",
+          "url": "scriptpack-1.0.8.jar",
+          "size": 9041,
+          "sha512": "c739a72aa762081bae7e839be27b2bd80c66dc4c401666f0ae62e1f56746da668b3e77e9fd55c515b02c262f05fffe331b3f84aa7035fccde1b3c555cdf60e68",
+          "sha256": "1a15c01b8ce0951a1a521554516ff078ced40f0850f7a637a63dee828434b05f",
+          "sha1": "23a3711a5923c97ae24322a2ce3ab5b4d7e31966",
+          "md5": "de7d1106af8e515c18baf8c9a5d1b602"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "scriptpack-1.0.8.jar",
+          "url": "scriptpack-1.0.8.jar",
+          "size": 9041,
+          "sha512": "c739a72aa762081bae7e839be27b2bd80c66dc4c401666f0ae62e1f56746da668b3e77e9fd55c515b02c262f05fffe331b3f84aa7035fccde1b3c555cdf60e68",
+          "sha256": "1a15c01b8ce0951a1a521554516ff078ced40f0850f7a637a63dee828434b05f",
+          "sha1": "23a3711a5923c97ae24322a2ce3ab5b4d7e31966",
+          "md5": "de7d1106af8e515c18baf8c9a5d1b602"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+plugins {
+    id "maven-publish"
+}
+
+configure(javaProjects()) {
+    apply plugin: "maven-publish"
+	apply plugin: "java"
+    publishing {
+        repositories {
+            maven {
+                name = "GitHubPackages"
+                url = uri("https://maven.pkg.github.com/mmkamburova/scriptpack")
+                credentials {
+                    username = project.findProperty("gpr.user") ?: System.getenv("GITHUB_ACTOR")
+                    password = project.findProperty("gpr.key") ?: System.getenv("GITHUB_TOKEN")
+                }
+            }
+        }
+        publications {
+            gpr(MavenPublication) {
+                from(components.java)
+            }
+        }
+    }
+}
+
+def javaProjects() {
+    subprojects.findAll { new File(it.projectDir, 'src').directory }
+}
