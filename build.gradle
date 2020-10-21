@@ -1,5 +1,5 @@
 plugins {
-    id "maven-publish"
+    id "maven"
     //id "ivy-publish"
     id "java-library"
 }
@@ -21,7 +21,10 @@ project.afterEvaluate {
 
         //artifactoryPublish.skip = true
         //artifactoryPublish.dependsOn('build')
-
+	
+	group=com.softwareag.github.packages.consumer.gradle
+        version=1.0.3
+	
         publishing {
             repositories {
                 //jcenter()
@@ -50,9 +53,6 @@ project.afterEvaluate {
             }
             publications {
                 gpr(MavenPublication) {
-		    project.configurations.implementation.withDependencies { dependencies ->            
-			dependencies.addAll(getDependencies(project)) 
-		    }
                     from(components.java)
                     artifact(sourceJar) {
                         classifier "source"
