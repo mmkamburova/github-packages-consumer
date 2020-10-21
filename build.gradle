@@ -22,8 +22,8 @@ project.afterEvaluate {
         //artifactoryPublish.skip = true
         //artifactoryPublish.dependsOn('build')
 	
-	group=com.softwareag.github.packages.consumer.gradle
-        version=1.0.3
+	group="com.softwareag.github.packages.consumer.gradle"
+        version="1.0.3"
 	
         publishing {
             repositories {
