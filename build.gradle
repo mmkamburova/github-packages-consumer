@@ -50,6 +50,9 @@ project.afterEvaluate {
             }
             publications {
                 gpr(MavenPublication) {
+		    project.configurations.implementation.withDependencies { dependencies ->            
+			dependencies.addAll(getDependencies(project)) 
+		    }
                     from(components.java)
                     artifact(sourceJar) {
                         classifier "source"
