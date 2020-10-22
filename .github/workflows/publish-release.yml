@@ -24,7 +24,13 @@ jobs:
           echo "New version: ${NEW_VERSION}"
           echo "Github username: ${GITHUB_ACTOR}"
           gradle install publish -is
-          
+      
+      - name: Archive libs
+        uses: actions/upload-artifact@v2
+        with:
+          name: build-libs-archive
+          path: build/libs
+              
       - name: Archive ivy.xml
         uses: actions/upload-artifact@v2
         with:
