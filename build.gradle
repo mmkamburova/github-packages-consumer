@@ -8,9 +8,27 @@ task sourceJar(type: Jar) {
   from sourceSets.main.allJava
 }
 
-dependencies {
-    implementation 'com.softwareag.scriptpack.gradle:scriptpack:1.0.26'
+buildscript {
+    repositories {
+        maven {
+	    name = "GitHubPackages"
+	    url = uri("https://maven.pkg.github.com/mmkamburova/scriptpack")
+	    credentials {
+		username = project.findProperty("gpr.user") ?: System.getenv("GITHUB_ACTOR")
+		password = project.findProperty("gpr.key") ?: System.getenv("GITHUB_TOKEN")
+	    }
+        }
+        
+    }
+    
+    dependencies {
+        classpath "com.softwareag.scriptpack:scriptpack:latest.integration"
+    }
 }
+
+/*dependencies {
+    implementation 'com.softwareag.scriptpack.gradle:scriptpack:1.0.26'
+}*/
 
 project.afterEvaluate {
     configure(javaProjects()) {
@@ -24,7 +42,7 @@ project.afterEvaluate {
         //artifactoryPublish.dependsOn('build')
 	
 	group="com.softwareag.github.packages.consumer.gradle"
-        version="1.0.5"
+        version="1.0.6"
 	
         publishing {
             repositories {
