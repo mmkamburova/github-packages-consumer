@@ -23,14 +23,14 @@ jobs:
           NEW_VERSION=$(echo "${GITHUB_REF}" | cut -d "/" -f3)
           echo "New version: ${NEW_VERSION}"
           echo "Github username: ${GITHUB_ACTOR}"
-          gradle dependencies > dependencies.txt
+          gradle -q dependencies --configuration compileClasspath > compile-classpath-dependencies.txt
           gradle install publish -is
       
       - name: Archive dependencies
         uses: actions/upload-artifact@v2
         with:
-          name: dependencies-archive
-          path: dependencies.txt
+          name: compile-classpath-dependencies-archive
+          path: compile-classpath-dependencies.txt
       
       - name: Archive libs
         uses: actions/upload-artifact@v2
